@@ -4,12 +4,10 @@ import { theme } from './config/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
-
-// Placeholder components for other routes
-const Servicios = () => <div>Servicios</div>;
-const Nosotros = () => <div>Nosotros</div>;
-const Clientes = () => <div>Clientes</div>;
-const Contacto = () => <div>Contacto</div>;
+import Clientes from './pages/Clientes';
+import Contacto from './pages/Contacto';
+import Servicios from './pages/Servicios';
+import Nosotros from './pages/Nosotros';
 
 function App() {
   return (

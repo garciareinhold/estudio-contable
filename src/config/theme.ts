@@ -1,16 +1,16 @@
 export const theme = {
   colors: {
-    primary: '#2C3E50',
-    secondary: '#3498DB',
-    accent: '#E74C3C',
+    primary: '#004DF3', // azul
+    secondary: '#004DF3', // usar el mismo azul para secondary
+    accent: '#000115', // negro para acento
     background: '#FFFFFF',
-    text: '#2C3E50',
-    lightGray: '#ECF0F1',
-    darkGray: '#7F8C8D',
+    text: '#000115', // negro para texto
+    lightGray: '#ECF0F1', // gris claro original
+    darkGray: '#888888', // gris oscuro neutro
   },
   fonts: {
-    main: "'Inter', sans-serif",
-    heading: "'Poppins', sans-serif",
+    main: "'Sora', sans-serif",
+    heading: "'Sora', sans-serif",
   },
   breakpoints: {
     mobile: '320px',

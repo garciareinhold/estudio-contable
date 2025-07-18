@@ -36,7 +36,7 @@ const FooterLink = styled.a`
   transition: color ${theme.transitions.default};
 
   &:hover {
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.accent};
   }
 `;
 
@@ -45,7 +45,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <FooterTitle>Estudio Contable</FooterTitle>
+          <img src="/images/estudio_liset_blanco.png" alt="Estudio Contable" style={{ height: 'auto', width: '140px' }} />
           <FooterText>
             Brindamos servicios contables y asesoramiento fiscal de alta calidad
             para empresas y particulares.
@@ -55,32 +55,32 @@ const Footer = () => {
         <FooterSection>
           <FooterTitle>Contacto</FooterTitle>
           <FooterText>
-            <strong>Dirección:</strong> Calle Principal 123, Ciudad
+            <strong>Dirección:</strong> Icalma 3150 - Tandil
           </FooterText>
           <FooterText>
-            <strong>Teléfono:</strong> (123) 456-7890
+            <strong>Teléfono:</strong> +549(249)4663899
           </FooterText>
           <FooterText>
-            <strong>Email:</strong> info@estudiocontable.com
+            <strong>Email:</strong> santi.liset@hotmail.es
           </FooterText>
         </FooterSection>
 
         <FooterSection>
           <FooterTitle>Horario</FooterTitle>
-          <FooterText>Lunes a Viernes: 9:00 - 18:00</FooterText>
-          <FooterText>Sábados: 9:00 - 13:00</FooterText>
+          <FooterText>Lunes a Viernes: 8:00 - 18:00</FooterText>
+          <FooterText>Sábados: 8:00 - 11:00</FooterText>
           <FooterText>Domingos: Cerrado</FooterText>
         </FooterSection>
 
         <FooterSection>
           <FooterTitle>Síguenos</FooterTitle>
-          <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+          <FooterLink href="https://www.linkedin.com/in/arturo-garcia-reinhold-1b1b1b1b1/" target="_blank" rel="noopener noreferrer">
             LinkedIn
           </FooterLink>
-          <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+          <FooterLink href="https://www.facebook.com/Estudio-Contable-y-Seguros-Generales-Liset" target="_blank" rel="noopener noreferrer">
             Facebook
           </FooterLink>
-          <FooterLink href="#" target="_blank" rel="noopener noreferrer">
+          <FooterLink href="https://www.instagram.com/santiagopabloliset/" target="_blank" rel="noopener noreferrer">
             Instagram
           </FooterLink>
         </FooterSection>

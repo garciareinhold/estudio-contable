@@ -17,7 +17,7 @@ const HeaderContainer = styled.header`
 const Nav = styled.nav`
   max-width: 1200px;
   margin: 0 auto;
-  padding: ${theme.spacing.md};
+  padding: 0 ${theme.spacing.md};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,28 +94,22 @@ const Header = () => {
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <span className="material-icons">account_balance</span>
-          Estudio Contable
+          <img src="/images/logo_estudio_contable.png" alt="Estudio Contable" style={{ height: '80px', width: 'auto' }} />
         </Logo>
         <NavLinks>
           <NavLink to="/">
-            <span className="material-icons">home</span>
             Inicio
           </NavLink>
           <NavLink to="/servicios">
-            <span className="material-icons">business_center</span>
             Servicios
           </NavLink>
           <NavLink to="/nosotros">
-            <span className="material-icons">groups</span>
             Nosotros
           </NavLink>
           <NavLink to="/clientes">
-            <span className="material-icons">people</span>
             Clientes
           </NavLink>
           <NavLink to="/contacto">
-            <span className="material-icons">contact_mail</span>
             Contacto
           </NavLink>
         </NavLinks>

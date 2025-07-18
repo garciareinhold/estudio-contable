@@ -4,5 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/estudio-contable/', // Ajusta esto al nombre de tu repositorio
+  base: '/', // Cambiado a la raíz para desarrollo local
+  publicDir: 'public', // Asegurando que la carpeta public sea accesible
 })
