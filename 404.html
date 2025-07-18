@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=/estudio-contable/" />
+  </head>
+  <body>
+    <script>
+      // Redirección para rutas internas en GitHub Pages (SPA)
+      var l = window.location;
+      var path = l.pathname.replace(/^\/estudio-contable/, '');
+      window.location.replace('/estudio-contable/' + (path ? ('#' + path) : ''));
+    </script>
+  </body>
+</html> 
