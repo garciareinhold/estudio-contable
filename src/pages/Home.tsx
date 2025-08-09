@@ -163,14 +163,14 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Estudio Contable Profesional
+            Estudio Contable y de Seguros
           </HeroTitle>
           <HeroSubtitle
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Soluciones contables y fiscales para tu negocio
+            Soluciones contables, fiscales y de seguros para tu negocio
           </HeroSubtitle>
         </Content>
       </TitleSection>

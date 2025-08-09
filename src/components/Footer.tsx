@@ -67,8 +67,8 @@ const Footer = () => {
 
         <FooterSection>
           <FooterTitle>Horario</FooterTitle>
-          <FooterText>Lunes a Viernes: 8:00 - 18:00</FooterText>
-          <FooterText>Sábados: 8:00 - 11:00</FooterText>
+          <FooterText>Lunes a Viernes: 7:00 - 17:00</FooterText>
+          <FooterText>Sábados: Cerrado</FooterText>
           <FooterText>Domingos: Cerrado</FooterText>
         </FooterSection>
 

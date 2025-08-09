@@ -80,7 +80,7 @@ const Contacto = () => {
         <CardGrid>
           <Card>
             <CardTitle>Sobre Nosotros</CardTitle>
-            <CardText>Brindamos servicios contables y asesoramiento fiscal de alta calidad para empresas y particulares.</CardText>
+            <CardText>Brindamos servicios contables, asesoramiento fiscal y en seguros de alta calidad para empresas y particulares.</CardText>
           </Card>
           <Card>
             <CardTitle>Contacto</CardTitle>

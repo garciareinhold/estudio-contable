@@ -2,11 +2,23 @@ import styled from 'styled-components';
 import { theme } from '../config/theme';
 import { motion } from 'framer-motion';
 
-const beneficios = [
+const beneficiosSeguros = [
   'Asesoramiento independiente y personalizado',
   'Comparación de precios y coberturas',
   'Acompañamiento en todo el proceso: desde la contratación hasta el siniestro',
   'Atención rápida y cercana',
+];
+
+const beneficiosContador = [
+  'Atención personalizada y trato directo',
+  'Respuesta rápida a consultas y necesidades',
+  'Cumplimiento puntual de obligaciones fiscales y contables',
+  'Amplia experiencia con monotributistas, autónomos y PyMEs',
+  'Asesoramiento integral en impuestos, ingresos brutos y ARCA',
+  'Actualización constante sobre cambios normativos',
+  'Confidencialidad y compromiso profesional',
+  'Gestión eficiente y ordenada de tu contabilidad',
+  'Acompañamiento cercano en cada etapa de tu actividad',
 ];
 
 const NosotrosWrapper = styled.div`
@@ -88,15 +100,29 @@ const Nosotros = () => {
       >
         <Titulo>¿Por qué contratarme como tu Productor?</Titulo>
         <BeneficiosList>
-          {beneficios.map((b, i) => (
+          {beneficiosSeguros.map((b: string, i: number) => (
             <Beneficio key={i}>{b}</Beneficio>
           ))}
         </BeneficiosList>
       </Card>
+      
+      <Card
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        <Titulo>¿Por qué contratarme como tu Contador?</Titulo>
+        <BeneficiosList>
+          {beneficiosContador.map((b: string, i: number) => (
+            <Beneficio key={i}>{b}</Beneficio>
+          ))}
+        </BeneficiosList>
+      </Card>
+      
       <MatriculasCard
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.3 }}
       >
         <Matricula>Productor Asesor de Seguros Mat. N° 75208</Matricula>
         <Matricula>Contador Público Mat. N° 47497/5 Tº182 Fº222</Matricula>
