@@ -6,6 +6,7 @@ import { theme } from '../config/theme';
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  currentPath: string;
 }
 
 const Overlay = styled(motion.div)`
@@ -53,15 +54,20 @@ const MenuItem = styled(motion.li)`
   margin-bottom: ${theme.spacing.lg};
 `;
 
-const MenuLink = styled(Link)`
-  color: ${theme.colors.text};
+interface MenuLinkProps {
+  $isActive: boolean;
+}
+
+const MenuLink = styled(Link)<MenuLinkProps>`
+  color: ${({ $isActive }) => $isActive ? theme.colors.primary : theme.colors.text};
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: ${({ $isActive }) => $isActive ? '600' : '500'};
   display: flex;
   align-items: center;
   gap: ${theme.spacing.sm};
   padding: ${theme.spacing.sm} 0;
   transition: color ${theme.transitions.default};
+  position: relative;
 
   &:hover {
     color: ${theme.colors.secondary};
@@ -70,9 +76,23 @@ const MenuLink = styled(Link)`
   .material-icons {
     font-size: 24px;
   }
+
+  ${({ $isActive }) => $isActive && `
+    &::before {
+      content: '';
+      position: absolute;
+      left: -${theme.spacing.md};
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      background-color: ${theme.colors.primary};
+      border-radius: 2px;
+    }
+  `}
 `;
 
-const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen, onClose, currentPath }: MobileMenuProps) => {
   const menuItems = [
     { path: '/', label: 'Inicio', icon: 'home' },
     { path: '/servicios', label: 'Servicios', icon: 'business_center' },
@@ -80,6 +100,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     { path: '/clientes', label: 'Clientes', icon: 'people' },
     { path: '/contacto', label: 'Contacto', icon: 'contact_mail' },
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return currentPath === '/';
+    }
+    return currentPath.startsWith(path);
+  };
 
   return (
     <AnimatePresence>
@@ -105,7 +132,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <MenuLink to={item.path} onClick={onClose}>
+                  <MenuLink to={item.path} onClick={onClose} $isActive={isActive(item.path)}>
                     <span className="material-icons">{item.icon}</span>
                     {item.label}
                   </MenuLink>

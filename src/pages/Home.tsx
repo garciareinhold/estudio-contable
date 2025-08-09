@@ -30,12 +30,27 @@ const VideoContainer = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    align-items: flex-start;
+  }
 `;
 
 const VideoBackground = styled.video`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    object-fit: cover;
+    object-position: center 20%;
+  }
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    object-fit: cover;
+    object-position: center 30%;
+  }
 `;
 
 const Overlay = styled(motion.div)`
@@ -51,6 +66,15 @@ const Overlay = styled(motion.div)`
     rgba(0, 0, 0, 0.4) 100%
   );
   z-index: 0;
+  
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
 `;
 
 const Content = styled(motion.div)`
@@ -125,7 +149,7 @@ const Home = () => {
           }}
         >
           <VideoBackground autoPlay muted loop playsInline>
-            <source src="videos/home_video.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}videos/home_video.mp4`} type="video/mp4" />
             Tu navegador no soporta el elemento de video.
           </VideoBackground>
           <Overlay />

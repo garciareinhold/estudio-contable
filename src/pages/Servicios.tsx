@@ -74,7 +74,7 @@ const CTA = [
 
 const ServiciosWrapper = styled.div`
   min-height: 90vh;
-  background: ${theme.colors.lightGray};
+  background: ${theme.colors.background};
   padding: ${theme.spacing.xl} 0;
 `;
 

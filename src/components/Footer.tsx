@@ -45,7 +45,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <img src="/images/estudio_liset_blanco.png" alt="Estudio Contable" style={{ height: 'auto', width: '140px' }} />
+          <img src={`${import.meta.env.BASE_URL}images/logo_estudio_contable.png`} alt="Estudio Contable" style={{ marginBottom: '1rem' }} />
           <FooterText>
             Brindamos servicios contables y asesoramiento fiscal de alta calidad
             para empresas y particulares.
@@ -58,10 +58,10 @@ const Footer = () => {
             <strong>Dirección:</strong> Icalma 3150 - Tandil
           </FooterText>
           <FooterText>
-            <strong>Teléfono:</strong> +549(249)4663899
+            <strong>Teléfono:</strong> <FooterLink href="https://wa.me/5492494663899" target="_blank" rel="noopener noreferrer">+549(249)4663899</FooterLink>
           </FooterText>
           <FooterText>
-            <strong>Email:</strong> santi.liset@hotmail.es
+            <strong>Email:</strong> <FooterLink href="mailto:santi.liset@hotmail.es">santi.liset@hotmail.es</FooterLink>
           </FooterText>
         </FooterSection>
 
@@ -74,9 +74,6 @@ const Footer = () => {
 
         <FooterSection>
           <FooterTitle>Síguenos</FooterTitle>
-          <FooterLink href="https://www.linkedin.com/in/arturo-garcia-reinhold-1b1b1b1b1/" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </FooterLink>
           <FooterLink href="https://www.facebook.com/Estudio-Contable-y-Seguros-Generales-Liset" target="_blank" rel="noopener noreferrer">
             Facebook
           </FooterLink>

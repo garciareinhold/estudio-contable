@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { theme } from '../config/theme';
 import MobileMenu from './MobileMenu';
 
@@ -42,17 +42,36 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavLink = styled(Link)`
-  color: ${theme.colors.text};
-  font-weight: 500;
+interface NavLinkProps {
+  $isActive: boolean;
+}
+
+const NavLink = styled(Link)<NavLinkProps>`
+  color: ${({ $isActive }) => $isActive ? theme.colors.primary : theme.colors.text};
+  font-weight: ${({ $isActive }) => $isActive ? '600' : '500'};
   transition: color ${theme.transitions.default};
   display: flex;
   align-items: center;
   gap: ${theme.spacing.xs};
+  position: relative;
+  padding: ${theme.spacing.sm} 0;
 
   &:hover {
     color: ${theme.colors.secondary};
   }
+
+  ${({ $isActive }) => $isActive && `
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: ${theme.colors.primary};
+      border-radius: 1px;
+    }
+  `}
 `;
 
 const HamburgerButton = styled.button`
@@ -81,6 +100,7 @@ const IconWrapper = styled.span<IconWrapperProps>`
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -90,26 +110,33 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <HeaderContainer>
       <Nav>
         <Logo to="/">
-          <img src="/images/logo_estudio_contable.png" alt="Estudio Contable" style={{ height: '80px', width: 'auto' }} />
+          <img src={`${import.meta.env.BASE_URL}images/logo_estudio_contable.png`} alt="Estudio Contable" style={{ height: '80px', width: 'auto' }} />
         </Logo>
         <NavLinks>
-          <NavLink to="/">
+          <NavLink to="/" $isActive={isActive('/')}>
             Inicio
           </NavLink>
-          <NavLink to="/servicios">
+          <NavLink to="/servicios" $isActive={isActive('/servicios')}>
             Servicios
           </NavLink>
-          <NavLink to="/nosotros">
+          <NavLink to="/nosotros" $isActive={isActive('/nosotros')}>
             Nosotros
           </NavLink>
-          <NavLink to="/clientes">
+          <NavLink to="/clientes" $isActive={isActive('/clientes')}>
             Clientes
           </NavLink>
-          <NavLink to="/contacto">
+          <NavLink to="/contacto" $isActive={isActive('/contacto')}>
             Contacto
           </NavLink>
         </NavLinks>
@@ -121,7 +148,7 @@ const Header = () => {
           </IconWrapper>
         </HamburgerButton>
       </Nav>
-      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
+      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} currentPath={location.pathname} />
     </HeaderContainer>
   );
 };
