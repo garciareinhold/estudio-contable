@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/estudio-contable/" />
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <meta http-equiv="refresh" content="0; url=/#" />
   </head>
   <body>
     <script>
-      // Redirección para rutas internas en GitHub Pages (SPA)
+      // Fallback simple para SPA con HashRouter en GitHub Pages
       var l = window.location;
-      var path = l.pathname.replace(/^\/estudio-contable/, '');
-      window.location.replace('/estudio-contable/' + (path ? ('#' + path) : ''));
+      var hash = l.hash || '#/';
+      if (!hash.startsWith('#/')) {
+        window.location.replace('/#' + (l.pathname.replace(/^\//, '') || ''));
+      }
     </script>
   </body>
 </html> 
