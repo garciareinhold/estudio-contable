@@ -94,11 +94,7 @@ const Contacto = () => {
             <CardText>Sábados: 8:00 - 11:00</CardText>
             <CardText>Domingos: Cerrado</CardText>
           </Card>
-          <Card>
-            <CardTitle>Síguenos</CardTitle>
-            <CardLink href="https://www.facebook.com/Estudio-Contable-y-Seguros-Generales-Liset" target="_blank" rel="noopener noreferrer">Facebook</CardLink>
-            <CardLink href="https://www.instagram.com/santiagopabloliset/" target="_blank" rel="noopener noreferrer">Instagram</CardLink>
-          </Card>
+          
         </CardGrid>
         <ContactForm />
       </ContentGrid>

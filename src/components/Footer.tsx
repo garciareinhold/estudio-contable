@@ -72,15 +72,7 @@ const Footer = () => {
           <FooterText>Domingos: Cerrado</FooterText>
         </FooterSection>
 
-        <FooterSection>
-          <FooterTitle>Síguenos</FooterTitle>
-          <FooterLink href="https://www.facebook.com/Estudio-Contable-y-Seguros-Generales-Liset" target="_blank" rel="noopener noreferrer">
-            Facebook
-          </FooterLink>
-          <FooterLink href="https://www.instagram.com/santiagopabloliset/" target="_blank" rel="noopener noreferrer">
-            Instagram
-          </FooterLink>
-        </FooterSection>
+        
       </FooterContent>
     </FooterContainer>
   );
